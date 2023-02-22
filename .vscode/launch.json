@@ -1,11 +1,15 @@
 {
     "configurations": [
+        
+        
+
+
         {
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "ie.tudublin.Main",
-            "projectName": ""
+            "projectName": "javap"
         },
         {
             "type": "java",
@@ -13,6 +17,7 @@
             "request": "launch",
             "mainClass": "ie.tudublin.Main",
             "projectName": "java"
-        }
+        } 
     ]
 }
+
