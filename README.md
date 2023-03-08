@@ -42,6 +42,378 @@ Resources
 - https://github.com/skooter500/OOP_Labtest1_2017_Starter
 - https://github.com/skooter500/OOP-LabTest1-2016
 
+# Week 7 - The Game of Life
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EQyeIpRQ3AxPsA27SVd5CbAB7DvWjpeVJqhUAcEnYXCl1g?e=lCuvXJ)
+- [Epic Conway's Game of Life](https://www.youtube.com/watch?v=C2vgICfQawE)
+- [3D Game of Life](https://www.youtube.com/watch?v=dQJ5aEsP6Fs)
+- [John Conway talks about the game of life](https://www.youtube.com/watch?v=FdMzngWchDk)
+- [The Dream of Life](https://www.youtube.com/watch?v=wU0PYcCsL6o)
+
+# Lab
+I fixed the bugs in the Game of Life code we wrote in the class today. They are in the game_of_life_fixed branch of the repo. To get the code we wrote today and new branch into your fork, run:
+
+```
+git checkout master
+git fetch upstream
+git pull upstream master
+```
+
+Create a branch for the lab:
+
+```
+git checkout -b lab7
+```
+
+Use the debugging tools in VS Code to track down the bug! 
+
+- F9 - Toggle a breakpoint
+- F10 - Step over
+- F11 - Step Into 
+- F5 - Start the debugger
+
+Interactive debuggers tools are essential tools for programmers.
+
+* If you want to cheat, [the solution is here](https://github.com/skooter500/OOP-2023/commit/0106cae8a3fe7b5855aa1ad977d4e6c4224c4c44). The important line is line 35 
+
+Your game of life should look like this (click the image for a video):
+
+[![YouTube](http://img.youtube.com/vi/SmH2r_ChmFY/0.jpg)](https://www.youtube.com/watch?v=SmH2r_ChmFY)
+
+Some extra things you can implement:
+
+- Increase size and change the size of the screen and see what effect this has on the simulation 
+- Press space to pause and resume the simulation
+- Press 1 to randomise the board again
+- Press 2 to clear the board
+- Press 3 to draw a cross shape and see how it evolves
+- Drag the mouse across the window to set cells at the mouse position to be alive.
+
+Some extra things you can implement that are not in the video
+
+- Draw a glider at the mouse position. This is starting pattern that will evolve a pattern that walks across the screen
+- Draw a Gosper Gun at the mouse position. This is a starting pattern that will spawn creatures indefinitely
+
+You can read more about these starting patterns and others in [this wikipedia article](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) and see examples in this video:
+
+[![YouTube](http://img.youtube.com/vi/HMYh4jKdtNU/0.jpg)](https://www.youtube.com/watch?v=HMYh4jKdtNU)
+
+If you want to learn more about cellular automata check out: 
+
+- [The Nature of Code](https://natureofcode.com/)
+- [A New Kind of Science](https://writings.stephenwolfram.com/2017/05/a-new-kind-of-science-a-15-year-view/)
+
+# Week 6 - Digital Audio 2 - Analyzing the FFT
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EaVOsq7ifNlNloBIg1uek9ABKkwOAbcNLygpO7U-g6zS6g?e=fW2KUb)
+
+## Tutorial
+- [Recording](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EfIyi8xt-mFMtFdbKTxaI0EBZOMb-LGuDfwtxDW1AX7_tA?e=wMQ9i0)
+
+## Lab
+
+Update your forks to get the code we wrote on Monday!
+
+When we take a frequency and get the note name for that frequency, this is called "spelling" the frequency. Here is some Java code for the frequencies of the notes in several octaves of the the D Major scale. For musicians in the class, you will know that D Major has 2 sharps. F# and C#, so the frequencies for the notes F and C are those for F# and C#
+
+```Java
+float[] frequencies = {293.66f, 329.63f, 369.99f, 392.00f, 440.00f, 493.88f, 554.37f, 587.33f
+			, 659.25f, 739.99f, 783.99f, 880.00f, 987.77f, 1108.73f, 1174.66f};
+	String[] spellings = {"D,", "E,", "F,", "G,", "A,", "B,", "C", "D", "E", "F", "G", "A", "B","c", "d", "e", "f", "g", "a", "b", "c'", "d'", "e'", "f'", "g'", "a'", "b'", "c''", "d''"};
+```
+-  Write a class called PitchSpeller that has the above 2 arrays as fields. It should have a method ```public String spell(float frequency)``` that takes a frequency as a parameter and returns the spelling which is *closest* to that frequency. Test your solution by adding code to the main method. For example:
+
+```Java
+PitchSpeller ps = new PitchSpeller();
+System.out.println(ps.spell(330));
+System.out.println(ps.spell(420));
+System.out.println(ps.spell(1980));
+```
+
+Should print:
+
+```
+E,
+A,
+b
+```
+
+You can use the ```Math.abs``` method in your solution to get the absolute value of a number.
+
+Now you can use the PitchSpeller class with the code we wrote on Monday and you will have made a simple transcription system.
+
+Here is a video of what your finished program might look like:
+
+[![YouTube](http://img.youtube.com/vi/bfLVzCD2UC0/0.jpg)](https://youtu.be/bfLVzCD2UC0)
+
+There is a file called scale.wav in the repo you can use to test your solution
+
+# Week 5 - Digital Audio 1
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/Ef00smEvputFlEtGJYTqleEBUMA-SFRxoxWUkPEnN34mPA?e=VfutXz)
+
+## Tutorial
+- [Recording](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EWmC4bZXgFJOq8cDIQ1akmgBQhgtOkZn6FsxPABtcs8c2Q?e=OSwzeT)
+
+### Lab
+### Learning Outcomes
+- Practice for loops
+- Demonstrate an understanding of how digital audio works
+- Practice computational thinking and problem solving
+- Have fun making beautiful things 
+
+Update your forks and have a look at Audio1.java this is the code we wrote on Monday with some modifications. Checkout the ```keyPressed``` function. This starts and restarts the audio file when you press space. Also it sets the value of the ```mode``` variable to be the numbers 0-5 when you press the appropriate key on the keyboard. If your computer wont play the audio file for some reason,you can uncomment the code to read audio from the microphone instead or use a .wav file instead.
+
+You should make an array the same size as the buffer and lerp the samples to each element in the buffer (similar to how we did the average). This will make all your visualisations smoother
+
+Ok now check out this video of 5 visuals you can make today. Pressing the keys 0-4 on the keyboard should change the visual in your sketch.
+
+[![YouTube](http://img.youtube.com/vi/xF7VrXZqLko/0.jpg)](https://www.youtube.com/watch?v=xF7VrXZqLko)
+
+- 0 - The wavy lines visual - To make this, flip the order of the x2, y2 parameters on the line
+- 1 - The waveform
+- 2 - The waveform drawn down the 4 sides of the screen
+- 3 - The circle - Use the lerped amplitude to control the size of the circle
+- 4 - The square - Again use the lerped amplitude to control the size of the square. You can also use rectMode(CENTER) to make the x and y parameters of the rect function determine the center of the rect rather than the coordinates of the top left corner
+- 5 - There is no visual associated with 5 in the video, so come up with your own!
+
+
+# Week 4
+- [Recoding of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/ESgtwCRYdVpEu2R8RmRUJMQBZA1XDVfpVZrfLEhVDeOaBg?e=23d7az) 
+- I have decided to *keep* the word guys as a gender inclusive term as there is currently no good alternative
+
+- [Recording of the tutorial](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EZ2psbF11CBBuUnuCHCWbjsB8JFIrTLht2xtaH596LGwdA?e=Co3nBE)
+
+## Lab 
+- Update the master branches of your repos to the code we worked on in Monday's class
+	```
+	git checkout master
+	git pull upstream master
+	```
+
+- Create a branch for your work today
+	```
+	git checkout -b lab4
+	```
+- Do some work on [the lab test from 2016](https://github.com/skooter500/OOP-LabTest1-2016/blob/master/readme.md). We started this in Monday's class, so you have some starter code.
+	- Create the Star class
+	- Load from the csv file into an ArrayList of Star objects
+	- Plot the stars to the grid
+
+- This is how you can load the file into an ArrayList of Star objects:
+
+	```Java
+	void loadStars()
+		{
+			Table table = loadTable("HabHYG15ly.csv", "header");
+			for(TableRow r:table.rows())
+			{
+				Star s = new Star(r);
+				stars.add(s);
+			}
+		}
+	```
+- You can make Constructors for Star class like this:
+
+	```Java
+	public Star(TableRow tr)
+		{
+			this(
+				tr.getInt("Hab?") == 1, 
+				tr.getString("Display Name"), 
+				tr.getFloat("Distance"),
+				tr.getFloat("Xg"),
+				tr.getFloat("Yg"),
+				tr.getFloat("Zg"),
+				tr.getFloat("AbsMag")
+			);
+		}
+		
+		public Star(boolean hab, String displayName, float distance, float xG, float yG, float zG, float absMag) {
+			this.hab = hab;
+			this.displayName = displayName;
+			this.distance = distance;
+			this.xG = xG;
+			this.yG = yG;
+			this.zG = zG;
+			this.absMag = absMag;
+		}
+	```
+- Commit and push your changes to the repo
+- Submit the URL to your repo via [this form](https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2ou3qmFXqEdGlmiD1Myl3gNUNzFGRTJMUzNKVkoxRUZGNUE1VUE2WTZBQy4u)
+
+# Week 3
+- No class because of the bank holiday
+- Lots of amazing things happened in tech!
+
+### Tutorial
+- [Recording of the tutorial](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/ETZxKYxvO_JCgO8VAtE8NCkBnVPbhKHdeE5F3aiiEd95Kw?e=wYOaxB)
+
+### Lab
+
+What a time to be alive!
+
+Here are three ideas for todays lab. Pick one:
+
+- I had the idea to include git commits on forks of this repo each week as part of the grade. Making a branch for each lab and some commits each week counts towards the final mark. To do this I need a Python program that:
+	- loads a csv file with student names, numbers and repo urls
+	- Has a set of rules for allocating marks for commits like, creating a branch and making 5 commits each week on the branch gets a point
+	- Uses the Github api to get this info for each student url
+	- Outputs this to csv file
+	- Make a git repo for your project and share it with me!
+
+- If you are making a game for [Games Fleadh](https://gamesfleadh.ie/) or even if you dont plan, you should check out Godot Game Engine. Its Oh My Wow! Holy Jingle Bells. Download it watch my [classes on Godot](https://github.com/skooter500/GE2-2023) (unedited) or do some tutorials. 
+
+- Here is a lab all about [using git](gitlab.md)
+
+- Try these programming exercises:
+
+Update your forks and create a branch on your repos for your work today:
+
+Today you can edit the file Loops.java and try out these procedural drawing exercises. The variable ```mode``` will have the value of 0-9 depending on which number key is pressed. You can use it to switch the pattern being drawn:
+
+### if statement 
+
+- 3 exercises. Click the image for video:
+
+[![YouTube](http://img.youtube.com/vi/18kMOeygmHA/0.jpg)](https://www.youtube.com/watch?v=18kMOeygmHA)
+
+### for loops:
+
+Use a loop, rect and the HSB colour space:
+
+![Sketch](images/p31.png)
+
+Use a loop, rect and the HSB colour space:
+
+![Sketch](images/p35.png)
+
+Use a loop, rect and the HSB colour space:
+
+![Sketch](images/p36.png)
+
+Use a loop, ellipse, and the HSB colour space:
+
+![Sketch](images/p34.png)
+
+Use a loop, ellipse and the HSB color space to draw this:
+
+![Sketch](images/p33.png)
+
+Use a nested loop to draw this:
+
+![Sketch](images/p32.png)
+
+Try and draw this using ONE for loop. You will need the [text](https://processing.org/reference/text_.html) and [textAlign](https://processing.org/reference/textAlign_.html) functions:
+
+![Sketch](images/p27.png)
+
+Use a nested loop to draw this:
+
+![Sketch](images/p23.png)
+
+Use sin and cos to draw this:
+
+![Sketch](images/p30.png)
+
+Use line, sin and cos to draw regular polygons like squares, pentagons, octogons etc:
+
+![Sketch](images/p10.png)
+
+Draw a procedural star like these:
+
+![Sketch](images/p5.png)
+
+# Week 2 - Introduction to drawing with Processing libraries
+
+## Lecture
+- [Recording of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EVMza0r4Z2hFuMUml87RwMsBE5yPcc7J_UArimAKbAFWlQ?e=ePh9de) 
+
+## Tutorial
+- [Recording](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/ERXftZvs-4xJsE8KwounpAsBVd85RQAn2jMdIJ1tsrAvfA?e=VG5uBx) 
+
+## Lab
+
+## Learning Outcomes
+- Practice drawing stuff and working out co-ordinates
+- Practice using variables and if statements in Java
+
+This is a video of a silly game called Bugzap made in Java using the Processing libraries. 
+
+[![YouTube](http://img.youtube.com/vi/s6PA8jtWneQ/0.jpg)](https://www.youtube.com/watch?v=s6PA8jtWneQ)
+
+How you should do it:
+
+Ok let's get the main game working first and not worry about the splash screen and the game over screen
+
+- Update your fork of the repository from the master branch. To do this, cd to the folder where you have cloned *your* repository, (or clone it somewhere if you need to) and type:
+
+```bash
+git checkout master
+git pull upstream master
+```
+
+- Create a branch for your work today by typing:
+
+```
+git checkout -b lab2
+```
+
+- Create a new class called BugZap.java in the ie.tudublin folder. Make it extend ```PApplet``` and add the ```settings```, ```setup``` and ```draw``` methods. Check out HelloProcessing2.java if you need examples for these. This class also has examples of the drawing methods with comments. You can also check out the [Processing reference]() if you are unsure about any of the methods.
+- Call ```size``` in ```settings``` to set the size of the drawing window. 
+- Edit the file Main.java so that it starts the BugZap class instead of the HelloProcessing2 class. I'll let you figure out how to do this :-)
+- Make sure everything works by compiling and running your program before continuing!
+
+Now we can draw the bug.
+
+- Make fields of type ```float``` in the BugZap class for ```playerX```, ```playerY``` and ```playerWidth``` and give these default values. You can decide what these should be. There are built in variables called ```width``` and ```height``` that give the width and height of the drawing window. These only get assigned after size has been called, so if you want to use these to give values to playerX, playerY etc. put the code into the *setup* method. 
+- Write a method called void ```void drawPlayer(float x, float y, float w)``` that draws the player character, centered around the parameters x, y. You can use the line method to do this. You can pass variables as parameters to this method and also things like ```x + 20```, ```w * 0.5f``` etc. I made an extra variable in this method called h for the height and set it to be half the w parameter. Don't forget to set the stroke color!
+- Call this method from ```draw```, passing in the parameters playerX, playerY and playerWidth.
+- Compile and run everything to make sure it's working before continuing.
+- If everything is working ok, you should see the bug on the screen
+
+Now lets get the player moving in response to the keys
+
+Add this method to BugZap.java:
+
+```Java
+public void keyPressed()
+	{
+		if (keyCode == LEFT)
+		{
+			System.out.println("Left arrow pressed");
+		}
+		if (keyCode == RIGHT)
+		{
+			System.out.println("Right arrow pressed");
+		}
+		if (key == ' ')
+		{
+			System.out.println("SPACE key pressed");
+		}
+	}	
+```
+
+- If you compile and run the program again you will see that some messages get printed out when you press various keys. If you are running in Visual Studio Code, you will see these messages appear in the Debug Console
+- Modify this method to increment and decrement the playerX variable instead and you should be able to get the player to move left and right
+- You might want to add if statements to this method to stop the player moving off the left and right side of the screens. If statements in Java are almost the same as in C!
+- When the player presses SPACE you will want to draw a line for the player's laser.
+
+The Bug
+
+- In a similar way to how you made the player, make the Bug. Make variables and drawBug method. Don't forget to call the method from draw()
+- To move the bug you can add a random amount to it's x coordinate on intervals. To generate a random number you can use the [random](https://processing.org/reference/random_.html) function.  
+- One way to make stuff happen on an interval rather than every frame is to use the frameCount variable. This variable is a field in PApplet and it gets incremented automatically every time draw is called. Because draw gets called 60 times a second, you can do something every second with this code:
+
+```Java
+if ((frameCount % 60) == 0)
+{
+    // Do something
+}
+```
+
+- You can print text to the screen using the [text](https://processing.org/reference/text_.html) function.
+
+Ok you should now have the basics working. See if you can figure out how to check to see if the player hits the bug, add scoring, splash screen, game over screen and sound.
+
+
 # Week 1 - Introduction
 
 ## Lecture
